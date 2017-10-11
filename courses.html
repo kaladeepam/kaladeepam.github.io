@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Courses | Kaladeepam Classical Dance School</title>
+        <meta charset="utf-8">
+        <meta name="google-translate-customization" content="228a60f81d740420-bcaf8a9030f46947-gca44e25ad7470839-12"></meta>
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />
+        <link rel="stylesheet" type="text/css" href="css/style5.css" />
+
+        <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+
+        <script type="text/javascript" src="js/jquery-1.5.2.js" ></script>
+        <script type="text/javascript" src="js/cufon-yui.js"></script>
+        <script type="text/javascript" src="js/cufon-replace.js"></script> 
+        <script type="text/javascript" src="js/Terminal_Dosis_300.font.js"></script>
+        <script type="text/javascript" src="js/atooltip.jquery.js"></script>
+        <script src="js/roundabout.js" type="text/javascript"></script>
+        <script src="js/roundabout_shapes.js" type="text/javascript"></script>
+        <script src="js/jquery.easing.1.2.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/menu.js" ></script>
+        <style>
+
+            .grid {
+                position: relative;
+                clear: both;
+                margin: 0 auto;
+
+                max-width: 1000px;
+                list-style: none;
+                text-align: center;
+            }
+
+            /* Common style */
+            .grid figure {
+                position: relative;
+                float: left;
+                overflow: hidden;
+
+                min-width: 200px;
+                max-width: 260px;
+                max-height: 300px;
+
+                height: auto;
+                background: #3085a3;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            .grid figure img {
+                position: relative;
+                display: block;
+                min-height: 100%;
+                max-width: 100%;
+                opacity: 0.8;
+            }
+
+            .grid figure figcaption {
+                padding: 2em;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 1.25em;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .grid figure figcaption::before,
+            .grid figure figcaption::after {
+                pointer-events: none;
+            }
+
+            .grid figure figcaption,
+            .grid figure figcaption > a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            /* Anchor will cover the whole item by default */
+            /* For some effects it will show as a button */
+            .grid figure figcaption > a {
+                z-index: 1000;
+                text-indent: 200%;
+                white-space: nowrap;
+                font-size: 0;
+                opacity: 0;
+            }
+
+            .grid figure h2 {
+                word-spacing: -0.15em;
+                font-weight: 300;
+            }
+
+            .grid figure h2 span {
+                font-weight: 800;
+            }
+
+            .grid figure h2,
+            .grid figure p {
+                margin: 0;
+            }
+
+            .grid figure p {
+                letter-spacing: 1px;
+                font-size: 68.5%;
+            }
+
+
+            figure.effect-julia {
+                background: #2f3238;
+            }
+
+            figure.effect-julia img {
+                max-width: none;
+                -webkit-transition: opacity 1s, -webkit-transform 1s;
+                transition: opacity 1s, transform 1s;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                
+            }
+
+            figure.effect-julia figcaption {
+                text-align: left;
+            }
+
+            figure.effect-julia h2 {
+                position: relative;
+                padding: 0.5em 0;
+            }
+
+            figure.effect-julia p {
+                display: inline-block;
+                margin: 0 0 0.25em;
+                padding: 0.4em 1em;
+                background: rgba(255,255,255,0.9);
+                color: #2f3238;
+                text-transform: none;
+                font-weight: 500;
+                font-size: 75%;
+                -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                transition: opacity 0.35s, transform 0.35s;
+                -webkit-transform: translate3d(-360px,0,0);
+                transform: translate3d(-360px,0,0);
+            }
+
+            figure.effect-julia p:first-child {
+                -webkit-transition-delay: 0.15s;
+                transition-delay: 0.15s;
+            }
+
+            figure.effect-julia p:nth-of-type(2) {
+                -webkit-transition-delay: 0.1s;
+                transition-delay: 0.1s;
+            }
+
+            figure.effect-julia p:nth-of-type(3) {
+                -webkit-transition-delay: 0.05s;
+                transition-delay: 0.05s;
+            }
+
+            figure.effect-julia:hover p:first-child {
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+            }
+
+            figure.effect-julia:hover p:nth-of-type(2) {
+                -webkit-transition-delay: 0.05s;
+                transition-delay: 0.05s;
+            }
+
+            figure.effect-julia:hover p:nth-of-type(3) {
+                -webkit-transition-delay: 0.1s;
+                transition-delay: 0.1s;
+            }
+
+            figure.effect-julia:hover img {
+                opacity: 0.4;              
+                -webkit-transform: scale3d(1.1,1.1,1);
+                transform: scale3d(1.1,1.1,1);
+
+            }
+
+            figure.effect-julia:hover p {
+                opacity: 1;
+                -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+            /* Media queries */
+
+        </style>
+
+        <!--[if lt IE 9]>
+                <script type="text/javascript" src="js/html5.js"></script>
+                <style type="text/css">
+                        .bg {behavior:url(js/PIE.htc)}
+                </style>
+        <![endif]-->
+        <!--[if lt IE 7]>
+                <div style='clear:both;text-align:center;position:relative'>
+                        <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0" alt="" /></a>
+                </div>
+        <![endif]-->
+    </head>
+    <body id="page4">
+        <div id="google_translate_element" style="float: right"></div><script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,hi,ta', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>     
+        <div class="body1">
+            <div class="body2">
+                <div class="body3">
+                    <div class="main">
+                        <!-- header -->
+                        <header>
+                            <div class="wrapper">
+
+                                <div id="sse60">
+                                    <div id="sses60">
+                                        <ul>
+
+                                            <li id="active"><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="news.html">News</a></li>
+                                            <li class="end"><a href="contact.php">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <a href="index.html" id="logo"></a>
+
+                            </div>
+                        </header><div class="ic"></div>
+                        <!-- / header-->
+                        <!-- content -->
+                        <section id="content">
+                            <div class="line1">
+                                <div class="line2 wrapper">
+                                    <div class="wrapper">
+
+                                        <article class="col1">
+                                            <h2>Bharatanatyam</h2>
+                                            
+                                            <div class="pad" style="padding-top: 6px;">
+                                                <div class="grid">
+                                                    <figure class="effect-julia" style="border: 2px solid grey; ">
+                                                        <img src="images/bharat.jpg" alt="Barathnatyam"/>
+                                                        <figcaption>
+
+                                                            <div>
+                                                                <p> Bharata Natyam is known for its grace, purity, tenderness, and sculpturesque poses</p>
+                                                                <p>Lord Shiva is considered the God of this dance form</p>
+                                                                <p>Bharata Natyam is considered to be a fire-dance</p>
+
+                                                            </div>
+
+                                                        </figcaption>			
+                                                    </figure>
+                                                </div>
+
+                                            </div>
+
+                                        </article>
+                                        <article class="col2 pad_left1">
+                                            <h2>Kuchipudi</h2>
+                                            <div class="pad">
+                                                <p class="pad_bot2">
+                                                <div class="grid">
+                                                    <figure class="effect-julia" style="border: 2px solid gray;">
+                                                        <img src="images/kuchipudi.jpg" alt="Kuchipudi"/>
+                                                        <figcaption>
+                                                           <div>
+                                                                <p>The dance begins with the sprinkling of holy water and the burning of incense.</p>
+                                                                <p>Kuchipudi is a combination of Nritha, Nrithya and Natya</p>
+                                                                <p>Kuchipudi originated in the 17th century</p>
+                                                            </div>
+                                                        </figcaption>			
+                                                    </figure>
+                                                </div>
+                                            </div>
+
+                                        </article>
+                                        <article class="col3 pad_left1" style="padding-left:130px">
+                                            <h2>Mohiniyattam</h2>
+                                            <div class="pad">
+                                                <p class="pad_bot2">
+                                                <div class="grid">
+                                                    <figure class="effect-julia" style="border: 2px solid grey;">
+                                                        <img src="images/mohini.jpg" alt="Mohiniyattam"/>
+                                                        <figcaption>
+                                                           <div>
+                                                                <p>Believed to have originated in 16th century</p>                                                               
+                                                                <p>The theme of the dance is usually love and devotion to God, Vishnu or Krishna</p>
+                                                            </div>
+                                                        </figcaption>			
+                                                    </figure>
+                                                </div>
+                                            </div>
+
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="bt-menu" class="bt-menu">
+            <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.php">Contact</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="#" class="bt-icon icon-twitter">Twitter</a></li>
+                <li><a href="#" class="bt-icon icon-gplus">Google+</a></li>
+                <li><a href="#" class="bt-icon icon-facebook">Facebook</a></li>
+                <li><a href="#" class="bt-icon icon-github">icon-github</a></li>
+            </ul>
+        </nav>
+        <!-- / content -->
+        <div class="main">
+            <!-- footer -->
+            <footer>
+                <div class="wrapper">
+
+                    <ul id="icons">
+                        <li><a href="#" class="normaltip" title="Facebook"><img src="images/icon1.png" alt=""></a></li>
+                        <li><a href="#" class="normaltip" title="Delicious"><img src="images/icon2.png" alt=""></a></li>
+                        <li><a href="#" class="normaltip" title="Stumble Upon"><img src="images/icon3.png" alt=""></a></li>
+                        <li><a href="#" class="normaltip" title="Twitter"><img src="images/icon4.png" alt=""></a></li>
+                        <li><a href="#" class="normaltip" title="Linkedin"><img src="images/icon5.png" alt=""></a></li>
+                        <li><a href="#" class="normaltip" title="Reddit"><img src="images/icon6.png" alt=""></a></li>
+                    </ul>
+                </div>
+                Designed By <a rel="nofollow" href="http://www.facebook.com/indrajithi/" target="_blank">Indrajith Indraprastham</a> 
+            </footer>
+            <!-- / footer -->
+        </div>
+        <script type="text/javascript"> Cufon.now();</script>
+        <script src="js/classie.js"></script>
+        <script src="js/borderMenu.js"></script>
+    </body>
+</html>
