@@ -32,6 +32,14 @@
         <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
     
  <style>
+
+        @font-face {
+        font-family: 'Merienda One';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Merienda One'), local('MeriendaOne-Regular'), url(//http://fonts.googleapis.com/css?family=Merienda+One) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+        }
             @font-face {
                 font-family: 'namaste';
                 src: url('fonts/namaste/namaste.ttf');
@@ -60,6 +68,36 @@
             
             h1:hover {             
              color: #673200;
+}
+
+.holder { 
+  background-color:#ccc;
+  width:300px;
+  height:150px;
+  overflow:hidden;
+  padding:10px;
+  font-family:Helvetica;
+}
+.holder .mask {
+  position: relative;
+  left: 0px;
+  top: 10px;
+  width:300px;
+  height:240px;
+  overflow: hidden;
+}
+.holder ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  position: relative;
+}
+.holder ul li {
+  padding:10px 0px;
+}
+.holder ul li a {
+  color:darkred;
+  text-decoration:none;
 }
 
 
@@ -225,17 +263,23 @@
                             </article>
                             <article class="col3 pad_left1">
                                 <h2>Updates</h2>
+                                         <div class="holder">
+  <ul id="ticker1">
+                            <li><a href="#">New Batch Started for Middle Aged</a></li>
+                            <li><a href="#">New Classes on Vijayadashami</a></li>
+                </ul>
+</div>
                                 <div class="pad">
                                     <div class="wrapper">
-                                        
-                                    </div>
+                               
+
+  
+                  
                                     <article class="col3 pad_left1">
-                                
-<!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://kaladeepam.com/news/feed",rssmikle_frame_width: "350",rssmikle_frame_height: "300",frame_height_by_article: "0",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "3",mcspeed: "20",sort: "Off",rssmikle_title: "on",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#7A2900",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#2B2B2B",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#FCFFF5",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "3",rssmikle_item_description_color: "#C4C4C4",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M:%S %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script><div style="font-size:10px; text-align:center; width:350px;"><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.--></div><!-- end feedwind code -->
-
-
+                  
 
                             </article>
+                            
                                     
                                 </div>
                             </article>
@@ -299,6 +343,45 @@
                     reflect: true
                 });
             });
+        </script>
+        <script type="text/javascript">
+            //scroll news
+            jQuery.fn.liScroll = function(settings) {
+    settings = jQuery.extend({
+        travelocity: 0.03
+        }, settings);       
+        return this.each(function(){
+                var $strip = jQuery(this);
+                $strip.addClass("newsticker")
+                var stripHeight = 1;
+                $strip.find("li").each(function(i){
+                    stripHeight += jQuery(this, i).outerHeight(true); // thanks to Michael Haszprunar and Fabien Volpi
+                });
+                var $mask = $strip.wrap("<div class='mask'></div>");
+                var $tickercontainer = $strip.parent().wrap("<div class='tickercontainer'></div>");                             
+                var containerHeight = $strip.parent().parent().height();    //a.k.a. 'mask' width   
+                $strip.height(stripHeight);         
+                var totalTravel = stripHeight;
+                var defTiming = totalTravel/settings.travelocity;   // thanks to Scott Waye     
+                function scrollnews(spazio, tempo){
+                $strip.animate({top: '-='+ spazio}, tempo, "linear", function(){$strip.css("top", containerHeight); scrollnews(totalTravel, defTiming);});
+                }
+                scrollnews(totalTravel, defTiming);             
+                $strip.hover(function(){
+                jQuery(this).stop();
+                },
+                function(){
+                var offset = jQuery(this).offset();
+                var residualSpace = offset.top + stripHeight;
+                var residualTime = residualSpace/settings.travelocity;
+                scrollnews(residualSpace, residualTime);
+                });         
+        }); 
+};
+
+$(function(){
+    $("ul#ticker01").liScroll();
+});
         </script>
         <script src="js/classie.js"></script>
         <script src="js/borderMenu.js"></script>
